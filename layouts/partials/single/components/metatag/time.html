@@ -1,4 +1,6 @@
-{{- $pubdate := .PublishDate.Format "2 January 2006" }}
-<time datetime="{{ .PublishDate }}" title="{{ .PublishDate }}">
-    {{ $pubdate }}
-</time>
+{{ if not .Page.Params.hideDate }}
+  {{- $pubdate := .PublishDate.Format "2 January 2006" }}
+  <time datetime="{{ .PublishDate }}" title="{{ .PublishDate }}">
+      {{ $pubdate }}
+  </time>
+{{ end }}
