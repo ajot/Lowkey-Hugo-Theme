@@ -6,3 +6,8 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="robots" href="/robots.txt" />
 
+<!-- Conditional Open Graph Image for Posts -->
+<!-- Conditional Open Graph Image for Posts -->
+{{ if and (eq .Section "posts") (not .IsHome) }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ with .Params.og_image }}{{ . }}{{ else }}/img/default-og-image.jpeg{{ end }}" />
+{{ end }}

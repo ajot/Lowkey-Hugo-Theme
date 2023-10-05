@@ -5,6 +5,10 @@
         {{ partial "single/components/metatag/time" . }}
         {{ partial "single/components/metatag/categories" . }}
         </div>
+        <!-- Include Open Graph Image -->
+        {{ if .Params.ogImage }}
+        <img src="{{ .Params.ogImage }}" alt="{{ .Title }}" />
+        {{ end }}
     </header>
     <section class="content text-lg text-gray-800">
     {{ .Content | emojify }}
